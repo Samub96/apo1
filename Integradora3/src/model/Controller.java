@@ -7,29 +7,62 @@ public class Controller {
 	
 	private Podcast[] podcast;
 	private Song[] song;
-	private StandarUser[] standUser;
+	private ArrayList<Song>songs;
+	private ArrayList<Podcast>podcasts;
+	private ArrayList<Artist>artist;
+	private ArrayList<StandarUser>standar;
 	private ArrayList<PremiumUser>premium;
-	private ContentCreator[] cc;
-	private Artist[] artist;
+	private ArrayList<ContentCreator>cc;
+	//ContentCreator[] cc;
+	
+	
 	
 	public Controller(){
-		ArrayList<PremiumUser> premium = new ArrayList<PremiumUser>();
+		//ArrayList<PremiumUser> premium = new ArrayList<PremiumUser>();
 	}
 	
 	public boolean registerPremiumUser(String nickname, String id, LocalDate vinculated) {
 		
-		for (int i = 0; i< premium.size();i++) {
-				
-				
-			
-		}
 		
+											//pendiente
 		
 		String msg = "";
 		
 		
 		return false;
 	}
+	
+public boolean registerStandar(String nickname, String id, LocalDate vinculated) {
+		
+		
+											//pendiente
+		
+		String msg = "";
+		
+		
+		return false;
+	}
+
+public boolean registerArtist(String nickname, String id, LocalDate vinculated) {
+	
+											//pendiente
+	
+	
+	String msg = "";
+	
+	
+	return false;
+}
+public boolean registerCC(String nickname, String id, LocalDate vinculated) {
+	
+											//pendiente
+	
+	
+	String msg = "";
+	
+	
+	return false;
+}
 	
 	
 	

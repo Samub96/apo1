@@ -7,7 +7,7 @@ public abstract class User {
 	private String id;
 	private LocalDate vinculated;
 	public User(String nickname, String id, LocalDate vinculated) {
-		super();
+		
 		this.nickname = nickname;
 		this.id = id;
 		this.vinculated = vinculated;
@@ -18,7 +18,7 @@ public abstract class User {
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 	public void setId(String id) {

@@ -36,13 +36,7 @@ public class NeoTunnes {
 		
 		System.out.println("Please pick an option\n" 
 				+ "(1) Create an user \n"
-				+ "(2) Register song  \n" 
-				+ "(3) register Podcast \n"
-				+ "(4) Create a Playlist \n"
-				+ "(5) Share playlist \n"
-				+ "(6) Reproduce playlist \n"
-				+ "(7) song Store \n"
-				+ "(8) Info \n"
+				+ "(2) Select an user \n"				
 				+ "(0) To leave the application" 
 				+ "\n");
 		option = reader.nextInt();
@@ -61,30 +55,10 @@ public class NeoTunnes {
 		case 1:
 			registerUser();
 			break;
-		case 2:
-			registerSong();
+		case 2: 
+			selectUser();
 			break;
-		case 3:
-			registerPodcast();
-			break;
-
-		case 4:
-			createPlaylist();
-			break;
-
-		case 5:
-			sharePlaylist();
-			break;
-			
-		case 6:
-			reproducePlaylist();
-			break;
-		case 7:
-			buySong();
-			break;
-		case 8 :
-			info();
-			break;
+		
 
 		default:
 			System.out.println("Error, type a valid option");
@@ -93,6 +67,86 @@ public class NeoTunnes {
 
 	}
 	
+	private void selectUser() {
+		
+		System.out.println("select an usern\n"
+				+"[1] Producer\n"
+				+"[2] Coustomer\n");
+		
+		String optionTemp1 = reader.nextLine();
+		
+		int option2 = Integer.parseInt(optionTemp1);
+		
+		if (option2 == 1 ) {
+			
+			//lista de usuarios *Pendiente*
+			
+			System.out.println("select an option\n"
+					+"[1] Store \n"
+					+"[2] list of song / podcasts buyed \n"
+					+"[3] Create a playlist \n"
+					+"[4] Share playlist \n"
+					+"[5] Reproduce playlist \n");
+			
+			String optionTemp = reader.nextLine();
+			
+			int option = Integer.parseInt(optionTemp);
+			
+			
+			switch(option) {
+			case 1:
+				buySong();
+				break;
+			case 2:
+				info();
+				break;
+			case 3:
+				createPlaylist();
+				break;
+			case 4:
+				sharePlaylist();
+				break;
+			case 5:
+				reproducePlaylist();
+				break;
+			
+			}
+			
+		}
+		
+		else if(option2 == 2 ) {
+			
+			//lista de usuario *pendiente*
+			
+		System.out.println("Please pick an option\n"
+							+"[1] register song\n"
+							+"[2] Register Podcast\n");
+		String optionTemp = reader.nextLine();
+		
+		int option = Integer.parseInt(optionTemp);
+		
+		switch (option) {
+		case 1:
+			registerSong();
+			break;
+		case 2:
+			registerPodcast();
+			break;
+		} 
+		
+		}else {
+			String msg = "Select a valid option ";
+			System.out.println(msg);
+			
+		}
+		
+		
+		
+		
+	}
+
+	
+
 	/**
 	 * muestra info de las canciones registradas, podcasts,tipo de usuario y canciones compradas  
 	 */
@@ -104,7 +158,8 @@ public class NeoTunnes {
 	 * registra los podcast
 	 */
 	private void registerPodcast() {
-		// TODO Auto-generated method stub
+		
+		
 		
 	}
 	 /**
@@ -143,7 +198,7 @@ public class NeoTunnes {
 		
 	}
 	/**
-	 * registra el usuario
+	 * registra el tipo de usuario
 	 */
 	private void registerUser() {
 		
@@ -155,6 +210,7 @@ public class NeoTunnes {
 		
 		String optiontemp = reader.nextLine();
 		int option = Integer.parseInt(optiontemp);
+		
 		switch(option) {
 		case 1:
 			registerPremiumUser();
@@ -173,25 +229,66 @@ public class NeoTunnes {
 		
 		
 	}
+	/**
+	 * registra el creador de contenido
+	 */
 
 	private void registerCCUser() {
-		// TODO Auto-generated method stub
 		
+		System.out.println("What is the NickName?");
+		String nickName = reader.nextLine();
+		System.out.println("Write the id");
+		String id = reader.nextLine();
+		
+		if (controller.registerCC(nickName, id, null)) {
+			
+			System.out.println("Registered succesfuly");
+		} else {
+			System.out.println("has an error to register");
+		}
 	}
-
+	/**
+	 * registra el artista
+	 */
 	private void registerArtistUser() {
-		// TODO Auto-generated method stub
 		
+		System.out.println("What is the NickName?");
+		String nickName = reader.nextLine();
+		System.out.println("Write the id");
+		String id = reader.nextLine();
+		
+		if (controller.registerArtist(nickName, id, null)) {
+			
+			System.out.println("Registered succesfuly");
+		} else {
+			System.out.println("has an error to register");
+		}
 	}
-
+	/**
+	 * registra el usuario standar consumidor
+	 */
 	private void registerStandartUser() {
-		// TODO Auto-generated method stub
+		
+		System.out.println("What is the NickName?");
+		
+		String nickName = reader.nextLine();
+		
+		System.out.println("Write the id");
+		
+		String id = reader.nextLine();
+		
+		if (controller.registerStandar(nickName, id, null)) {
+			
+			System.out.println("Registered succesfuly");
+		} else {
+			System.out.println("has an error to register");
+		}
 		
 	}
 	
 	
 	/**
-	 * register a premium user
+	 * registra el usuario premium consumidor
 	 */
 
 	private void registerPremiumUser() {
@@ -201,7 +298,12 @@ public class NeoTunnes {
 		System.out.println("Write the id");
 		String id = reader.nextLine();
 		
-		
+		if (controller.registerPremiumUser(nickName, id, null)) {
+			
+			System.out.println("Registered succesfuly");
+		} else {
+			System.out.println("has an error to register");
+		}
 
 
 		
