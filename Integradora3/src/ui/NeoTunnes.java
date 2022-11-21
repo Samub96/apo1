@@ -1,6 +1,7 @@
 package ui;
 
 import java.util.Scanner;
+import java.time.LocalDate;
 
 import model.Controller;
 
@@ -194,7 +195,23 @@ public class NeoTunnes {
 	 * registra las canciones
 	 */
 	private void registerSong() {
-		// TODO Auto-generated method stub
+		//name, album, duration, solds, urlPicture
+		
+		
+		System.out.println("What is the name");
+		String name = reader.nextLine();
+		System.out.println("What is the Album");
+		String album = reader.nextLine();
+		reader.nextLine();
+		String duretiontemp = reader.nextLine();
+		int duration = Integer.parseInt(duretiontemp);
+		System.out.println("Price");
+		String pricetemp = reader.nextLine();
+		int price = Integer.parseInt(pricetemp);
+		System.out.println("paste the url of picture");
+		String url = reader.nextLine();
+		
+		controller.registersong(name, album, duration, price, url);
 		
 	}
 	/**
@@ -242,7 +259,7 @@ public class NeoTunnes {
 		
 		if (controller.registerCC(nickName, id, null)) {
 			
-			System.out.println("Registered succesfuly");
+			System.out.println("Registered succesfully");
 		} else {
 			System.out.println("has an error to register");
 		}
