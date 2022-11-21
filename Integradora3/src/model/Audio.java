@@ -4,15 +4,15 @@ public abstract class Audio {
 	private String name;
 	private String album;
 	private double duration;
-	private double solds;
+	
 	private String urlPicture;
 	
-	public Audio(String name, String album, double duration, double solds, String urlPicture) {
+	public Audio(String name, String album, double duration,  String urlPicture) {
 		
 		this.name = name;
 		this.album = album;
 		this.duration = duration;
-		this.solds = solds;
+		
 		this.urlPicture = urlPicture;
 	}
 
@@ -40,13 +40,7 @@ public abstract class Audio {
 		this.duration = duration;
 	}
 
-	public double getSolds() {
-		return solds;
-	}
-
-	public void setSolds(double solds) {
-		this.solds = solds;
-	}
+	
 
 	public String getUrlPicture() {
 		return urlPicture;
@@ -58,7 +52,7 @@ public abstract class Audio {
 
 	@Override
 	public String toString() {
-		return "Audio [name=" + name + ", album=" + album + ", duration=" + duration + ", solds=" + solds
+		return "Audio [name=" + name + ", album=" + album + ", duration=" + duration + ", solds=" 
 				+ ", urlPicture=" + urlPicture + "]";
 	}
 	

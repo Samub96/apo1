@@ -47,6 +47,13 @@ public class Controller {
 		return true;
 	}
 	
+	/**
+	 * 
+	 * @param nickname
+	 * @param id
+	 * @param vinculated
+	 * @return
+	 */
 	
 public boolean registerStandar(String nickname, String id, LocalDate vinculated) {
 		
@@ -57,6 +64,14 @@ public boolean registerStandar(String nickname, String id, LocalDate vinculated)
 		return true;
 	}
 
+
+/**
+ * 
+ * @param nickname
+ * @param id
+ * @param vinculated
+ * @return
+ */
 public boolean registerArtist(String nickname, String id, LocalDate vinculated) {
 	
 											
@@ -69,7 +84,13 @@ public boolean registerArtist(String nickname, String id, LocalDate vinculated) 
 }
 
 
-
+/**
+ * 
+ * @param nickname
+ * @param id
+ * @param vinculated
+ * @return
+ */
 public boolean registerCC(String nickname, String id, LocalDate vinculated) {
 	
 	ContentCreator contenido = new ContentCreator(nickname, id, vinculated);
@@ -78,7 +99,18 @@ public boolean registerCC(String nickname, String id, LocalDate vinculated) {
 											
 	return true;
 }
-	
+
+
+	/**
+	 * 
+	 * @param name
+	 * @param album
+	 * @param duration
+	 * @param solds
+	 * @param urlPicture
+	 * @return
+	 */
+
 	public boolean registersong(String name, String album, double duration, double solds, String urlPicture) {
 		
 		Song song = new Song(name, album, duration, solds, urlPicture);
@@ -90,15 +122,34 @@ public boolean registerCC(String nickname, String id, LocalDate vinculated) {
 		
 	}
 	
-	public boolean registerPodcast(String name, String album, double duration, double solds, String urlPicture, int type,String descrption) {
+	
+	/**
+	 * 
+	 * @param name
+	 * @param album
+	 * @param duration
+	 * @param solds
+	 * @param urlPicture
+	 * @param type
+	 * @param descrption
+	 * @return
+	 */
+	
+	public boolean registerPodcast(String name, String album, double duration,  String urlPicture, int type,String descrption) {
 		
-		Podcast podcast = new Podcast(name, album, duration, solds, urlPicture, type, descrption);
+		Podcast podcast = new Podcast(name, album, duration,  urlPicture, type, descrption);
 		
 		podcasts.add(podcast);
 		
 		
 		return true;
 	}
+	
+	
+	/**
+	 * 
+	 * @return
+	 */
 	
 	public String showUsers() {
 		
@@ -123,6 +174,71 @@ public boolean registerCC(String nickname, String id, LocalDate vinculated) {
 		return msg;
 	}
 	
+	
+	public String showUsersPremium() {
+		
+		String msg = "";
+		
+		
+		for (int i = 0; i<premium.size() ; i++) {
+		
+		msg += "Premium Users \n"
+				+premium.get(i).getNickname();
+		}
+		
+		return msg;
+		
+	}
+	
+	public String showUsersStandart() {
+		
+		String msg = "";
+		
+		
+		for (int i = 0; i<standar.size() ; i++) {
+		
+		msg += "Standart Users \n"
+				+standar.get(i).getNickname();
+		}
+		
+		return msg;
+		
+	}
+	
+	public String showUsersAtrist() {
+		
+		String msg = "";
+		
+		
+		for (int i = 0; i<artist.size() ; i++) {
+		
+		msg += "Artist Users \n"
+				+artist.get(i).getNickname();
+		}
+		
+		return msg;
+		
+	}
+
+	public String showUsersCC() {
+		
+		String msg = "";
+		
+		
+		for (int i = 0; i<cc.size() ; i++) {
+		
+		msg += "Content creator Users \n"
+				+cc.get(i).getNickname();
+		}
+		
+		return msg;
+		
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
 	
 	public String showSong() {
 		
